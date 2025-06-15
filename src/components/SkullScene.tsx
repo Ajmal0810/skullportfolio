@@ -536,25 +536,7 @@ const SkullScene: React.FC = () => {
       <div className="absolute bottom-4 right-4 bg-gradient-to-r from-space-800/95 to-space-700/95 backdrop-blur-md border border-space-600 rounded-xl p-4 text-white shadow-xl">
         <div className="space-y-2">
           <div className="flex items-center space-x-2">
-            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-            <span className="text-xs text-green-400">Green → Home</span>
-          </div>
-          <div className="flex items-center space-x-2">
-            <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-            <span className="text-xs text-blue-400">Blue → Projects</span>
-          </div>
-          <div className="flex items-center space-x-2">
-            <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
-            <span className="text-xs text-yellow-400">Orange → Skills</span>
-          </div>
-          <div className="flex items-center space-x-2">
-            <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
-            <span className="text-xs text-purple-400">Purple → Resume</span>
-          </div>
-          <div className="flex items-center space-x-2">
-            <div className="w-2 h-2 bg-red-400 rounded-full animate-pulse"></div>
-            <span className="text-xs text-red-400">Red → Contact</span>
-          </div>
+            
         </div>
       </div>
 
