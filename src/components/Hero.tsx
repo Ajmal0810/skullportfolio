@@ -13,7 +13,6 @@ const Hero: React.FC = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
-  const particlesRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const tl = gsap.timeline({ delay: 2.2 });
@@ -45,23 +44,6 @@ const Hero: React.FC = () => {
       }
     };
 
-    // Enhanced floating animation for particles
-    if (particlesRef.current) {
-      const particles = particlesRef.current.children;
-      Array.from(particles).forEach((particle, index) => {
-        gsap.to(particle, {
-          y: `random(-40, 40)`,
-          x: `random(-30, 30)`,
-          rotation: `random(-180, 180)`,
-          duration: `random(4, 8)`,
-          repeat: -1,
-          yoyo: true,
-          ease: 'sine.inOut',
-          delay: index * 0.1,
-        });
-      });
-    }
-
     window.addEventListener('scroll', handleScroll);
     
     return () => {
@@ -79,60 +61,14 @@ const Hero: React.FC = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
-      {/* Enhanced dark animated background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black opacity-90"></div>
-      <div className="absolute inset-0 bg-gradient-to-t from-red-900/20 via-transparent to-orange-900/10 opacity-60"></div>
+      {/* Pure black animated background */}
+      <div className="absolute inset-0 bg-black"></div>
       
-      {/* Animated dark mesh background */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 via-orange-500/5 to-yellow-500/10 animate-pulse"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(220,38,38,0.1)_0%,transparent_50%)] animate-ping"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(251,146,60,0.08)_0%,transparent_50%)] animate-pulse" style={{ animationDelay: '1s' }}></div>
-      </div>
-      
-      {/* Enhanced dark particle background */}
-      <div ref={particlesRef} className="absolute inset-0 opacity-40">
-        {[...Array(100)].map((_, i) => (
-          <div
-            key={i}
-            className={`absolute rounded-full animate-pulse ${
-              i % 5 === 0 ? 'w-2 h-2 bg-red-400/60' :
-              i % 5 === 1 ? 'w-1 h-1 bg-orange-400/50' :
-              i % 5 === 2 ? 'w-3 h-3 bg-yellow-400/40' :
-              i % 5 === 3 ? 'w-1.5 h-1.5 bg-red-300/70' :
-              'w-2.5 h-2.5 bg-orange-300/30'
-            }`}
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 4}s`,
-              animationDuration: `${3 + Math.random() * 4}s`,
-              boxShadow: i % 3 === 0 ? '0 0 10px currentColor' : 'none'
-            }}
-          ></div>
-        ))}
-      </div>
-
-      {/* Floating dark geometric shapes */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(15)].map((_, i) => (
-          <div
-            key={i}
-            className={`absolute opacity-15 ${
-              i % 4 === 0 ? 'w-16 h-16 bg-gradient-to-br from-red-600/30 to-red-800/20 rounded-full' :
-              i % 4 === 1 ? 'w-12 h-12 bg-gradient-to-br from-orange-600/25 to-orange-800/15 rotate-45' :
-              i % 4 === 2 ? 'w-20 h-20 bg-gradient-to-br from-yellow-600/20 to-yellow-800/10 rounded-lg rotate-12' :
-              'w-8 h-24 bg-gradient-to-br from-red-700/25 to-orange-700/15 rounded-full rotate-45'
-            }`}
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animation: `float ${5 + Math.random() * 6}s ease-in-out infinite`,
-              animationDelay: `${Math.random() * 3}s`,
-              filter: 'blur(1px)'
-            }}
-          ></div>
-        ))}
+      {/* Subtle animated mesh background */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 via-orange-500/3 to-yellow-500/5 animate-pulse"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(220,38,38,0.05)_0%,transparent_50%)] animate-ping"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(251,146,60,0.03)_0%,transparent_50%)] animate-pulse" style={{ animationDelay: '1s' }}></div>
       </div>
 
       <div ref={heroRef} className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -177,16 +113,16 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Enhanced 3D Skull Scene with dark theme */}
-          <div className="relative h-96 lg:h-[600px] rounded-2xl overflow-hidden bg-black border border-red-900/50 shadow-2xl shadow-red-500/10">
+          {/* Enhanced 3D Skull Scene with clean visibility */}
+          <div className="relative h-96 lg:h-[600px] rounded-2xl overflow-hidden bg-black border border-red-900/30 shadow-2xl shadow-red-500/10">
             <ErrorBoundary>
               <SkullScene />
             </ErrorBoundary>
             
-            {/* Dark glowing border effect */}
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-red-500/10 via-orange-500/10 to-yellow-500/10 opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+            {/* Subtle glowing border effect */}
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-red-500/5 via-orange-500/5 to-yellow-500/5 opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
             
-            {/* Enhanced dark instructions */}
+            {/* Enhanced instructions */}
             <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-center bg-black/95 backdrop-blur-md rounded-xl p-4 border border-red-600/50">
               <p className="text-red-300 text-sm mb-2 font-medium">💀 Interactive Navigation</p>
               <div className="flex items-center justify-center space-x-3">
@@ -205,7 +141,7 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Enhanced dark scroll indicator */}
+      {/* Enhanced scroll indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="flex flex-col items-center space-y-2">
           <ChevronDown className="w-8 h-8 text-red-400 animate-pulse drop-shadow-lg" />
@@ -213,10 +149,10 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Dark ambient glow effects */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-red-500/5 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
-      <div className="absolute top-3/4 left-3/4 w-64 h-64 bg-yellow-500/5 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '4s' }}></div>
+      {/* Subtle ambient glow effects */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-red-500/3 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-orange-500/3 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute top-3/4 left-3/4 w-64 h-64 bg-yellow-500/3 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '4s' }}></div>
     </section>
   );
 };

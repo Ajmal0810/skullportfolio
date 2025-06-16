@@ -29,91 +29,91 @@ const SkullScene: React.FC = () => {
   const anatomicalParts = [
     { 
       name: 'Frontal Bone', 
-      color: 0x8a8a8a, 
+      color: 0xf5f5f5, 
       glowColor: 0xff4444,
-      position: [0, 1.8, 1.2], 
+      position: [0, 2.2, 1.5], 
       section: 'home',
-      scale: [1.4, 1.2, 1.0]
+      scale: [1.8, 1.5, 1.2]
     },
     { 
       name: 'Parietal Bone (Left)', 
-      color: 0x7a7a7a, 
+      color: 0xf0f0f0, 
       glowColor: 0x4488ff,
-      position: [-1.2, 1.4, -0.3], 
+      position: [-1.5, 1.8, -0.4], 
       section: 'projects',
-      scale: [1.0, 1.3, 1.4]
+      scale: [1.3, 1.6, 1.8]
     },
     { 
       name: 'Parietal Bone (Right)', 
-      color: 0x7a7a7a, 
+      color: 0xf0f0f0, 
       glowColor: 0x4488ff,
-      position: [1.2, 1.4, -0.3], 
+      position: [1.5, 1.8, -0.4], 
       section: 'projects',
-      scale: [1.0, 1.3, 1.4]
+      scale: [1.3, 1.6, 1.8]
     },
     { 
       name: 'Temporal Bone (Left)', 
-      color: 0x6a6a6a, 
+      color: 0xeeeeee, 
       glowColor: 0xffaa44,
-      position: [-1.6, 0.2, 0.2], 
+      position: [-2.0, 0.3, 0.3], 
       section: 'skills',
-      scale: [0.8, 1.0, 1.2]
+      scale: [1.0, 1.3, 1.5]
     },
     { 
       name: 'Temporal Bone (Right)', 
-      color: 0x6a6a6a, 
+      color: 0xeeeeee, 
       glowColor: 0xffaa44,
-      position: [1.6, 0.2, 0.2], 
+      position: [2.0, 0.3, 0.3], 
       section: 'skills',
-      scale: [0.8, 1.0, 1.2]
+      scale: [1.0, 1.3, 1.5]
     },
     { 
       name: 'Occipital Bone', 
-      color: 0x5a5a5a, 
+      color: 0xebebeb, 
       glowColor: 0xaa44ff,
-      position: [0, 0.8, -1.8], 
+      position: [0, 1.0, -2.2], 
       section: 'resume',
-      scale: [1.3, 1.1, 1.0]
+      scale: [1.6, 1.4, 1.2]
     },
     { 
       name: 'Maxilla', 
-      color: 0x9a9a9a, 
+      color: 0xf8f8f8, 
       glowColor: 0x44ffaa,
-      position: [0, -0.3, 1.4], 
+      position: [0, -0.4, 1.8], 
       section: 'resume',
-      scale: [1.8, 0.6, 0.8]
+      scale: [2.2, 0.8, 1.0]
     },
     { 
       name: 'Mandible', 
-      color: 0x8a8a8a, 
+      color: 0xf5f5f5, 
       glowColor: 0xff6644,
-      position: [0, -1.2, 0.8], 
+      position: [0, -1.5, 1.0], 
       section: 'contact',
-      scale: [2.0, 0.7, 1.0]
+      scale: [2.5, 0.9, 1.3]
     },
     { 
       name: 'Eye Socket (Left)', 
-      color: 0x2a2a2a, 
+      color: 0x1a1a1a, 
       glowColor: 0xff2222,
-      position: [-0.6, 0.4, 1.0], 
+      position: [-0.8, 0.5, 1.3], 
       section: 'projects',
-      scale: [0.8, 1.0, 0.6]
+      scale: [1.0, 1.3, 0.8]
     },
     { 
       name: 'Eye Socket (Right)', 
-      color: 0x2a2a2a, 
+      color: 0x1a1a1a, 
       glowColor: 0xff2222,
-      position: [0.6, 0.4, 1.0], 
+      position: [0.8, 0.5, 1.3], 
       section: 'skills',
-      scale: [0.8, 1.0, 0.6]
+      scale: [1.0, 1.3, 0.8]
     },
     { 
       name: 'Nasal Cavity', 
-      color: 0x1a1a1a, 
+      color: 0x0a0a0a, 
       glowColor: 0xff8844,
-      position: [0, -0.1, 1.2], 
+      position: [0, -0.1, 1.5], 
       section: 'contact',
-      scale: [0.4, 0.8, 0.3]
+      scale: [0.5, 1.0, 0.4]
     }
   ];
 
@@ -125,8 +125,8 @@ const SkullScene: React.FC = () => {
     // Enhanced camera animation with dramatic zoom
     if (cameraRef.current) {
       gsap.to(cameraRef.current.position, {
-        z: 15,
-        duration: 0.6,
+        z: 18,
+        duration: 0.8,
         ease: 'power3.out',
         onComplete: () => {
           // Navigate to section
@@ -138,10 +138,10 @@ const SkullScene: React.FC = () => {
           // Return camera with bounce effect
           if (cameraRef.current) {
             gsap.to(cameraRef.current.position, {
-              z: 10,
-              duration: 1.2,
+              z: 12,
+              duration: 1.5,
               ease: 'elastic.out(1, 0.5)',
-              delay: 0.4,
+              delay: 0.5,
               onComplete: () => {
                 setIsNavigating(false);
               }
@@ -151,7 +151,7 @@ const SkullScene: React.FC = () => {
       });
     }
 
-    // Enhanced screen flash effect with skull colors
+    // Enhanced screen flash effect
     const flash = document.createElement('div');
     flash.style.cssText = `
       position: fixed;
@@ -159,7 +159,7 @@ const SkullScene: React.FC = () => {
       left: 0;
       width: 100vw;
       height: 100vh;
-      background: radial-gradient(circle, rgba(255, 68, 68, 0.4) 0%, rgba(255, 136, 68, 0.2) 50%, transparent 100%);
+      background: radial-gradient(circle, rgba(255, 68, 68, 0.6) 0%, rgba(255, 136, 68, 0.3) 50%, transparent 100%);
       pointer-events: none;
       z-index: 9999;
       opacity: 0;
@@ -168,7 +168,7 @@ const SkullScene: React.FC = () => {
     
     gsap.to(flash, {
       opacity: 1,
-      duration: 0.15,
+      duration: 0.2,
       yoyo: true,
       repeat: 3,
       onComplete: () => {
@@ -200,10 +200,10 @@ const SkullScene: React.FC = () => {
       if (skullPart) {
         // Dramatic click animation with glow pulse
         gsap.to(clickedMesh.scale, {
-          x: clickedMesh.scale.x * 1.4,
-          y: clickedMesh.scale.y * 1.4,
-          z: clickedMesh.scale.z * 1.4,
-          duration: 0.3,
+          x: clickedMesh.scale.x * 1.6,
+          y: clickedMesh.scale.y * 1.6,
+          z: clickedMesh.scale.z * 1.6,
+          duration: 0.4,
           yoyo: true,
           repeat: 1,
           ease: 'power3.out',
@@ -215,8 +215,8 @@ const SkullScene: React.FC = () => {
         material.emissive.setHex(skullPart.glowColor);
         
         gsap.to(material, {
-          emissiveIntensity: 1.5,
-          duration: 0.4,
+          emissiveIntensity: 2.0,
+          duration: 0.5,
           yoyo: true,
           repeat: 1,
           onComplete: () => {
@@ -229,10 +229,10 @@ const SkullScene: React.FC = () => {
         if (cameraRef.current) {
           const originalPosition = cameraRef.current.position.clone();
           gsap.to(cameraRef.current.position, {
-            x: originalPosition.x + (Math.random() - 0.5) * 0.3,
-            y: originalPosition.y + (Math.random() - 0.5) * 0.3,
+            x: originalPosition.x + (Math.random() - 0.5) * 0.4,
+            y: originalPosition.y + (Math.random() - 0.5) * 0.4,
             duration: 0.1,
-            repeat: 5,
+            repeat: 7,
             yoyo: true,
             onComplete: () => {
               if (cameraRef.current) {
@@ -245,7 +245,7 @@ const SkullScene: React.FC = () => {
         // Navigate after dramatic effects
         setTimeout(() => {
           navigateToSection(skullPart.section);
-        }, 600);
+        }, 800);
       }
     }
   }, [isNavigating, navigateToSection]);
@@ -274,14 +274,14 @@ const SkullScene: React.FC = () => {
     if (!mountRef.current || isInitializedRef.current) return;
 
     try {
-      // Scene setup with dark theme
+      // Scene setup with pure black background
       const scene = new THREE.Scene();
-      scene.fog = new THREE.Fog(0x000000, 5, 25);
+      scene.background = new THREE.Color(0x000000);
       
       const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
       const renderer = new THREE.WebGLRenderer({ 
         antialias: true, 
-        alpha: true,
+        alpha: false,
         powerPreference: 'high-performance'
       });
 
@@ -291,7 +291,7 @@ const SkullScene: React.FC = () => {
       raycasterRef.current = new THREE.Raycaster();
       mouseRef.current = new THREE.Vector2();
 
-      // Enhanced renderer setup for dramatic effects
+      // Enhanced renderer setup for clear visibility
       const container = mountRef.current;
       const { clientWidth, clientHeight } = container;
       
@@ -301,56 +301,56 @@ const SkullScene: React.FC = () => {
       renderer.shadowMap.enabled = true;
       renderer.shadowMap.type = THREE.PCFSoftShadowMap;
       renderer.toneMapping = THREE.ACESFilmicToneMapping;
-      renderer.toneMappingExposure = 0.8;
+      renderer.toneMappingExposure = 1.2;
       
       container.appendChild(renderer.domElement);
 
-      // Camera setup
+      // Camera setup for better skull visibility
       camera.aspect = clientWidth / clientHeight;
-      camera.position.set(0, 0, 10);
+      camera.position.set(0, 0, 12);
       camera.updateProjectionMatrix();
 
-      // Dramatic lighting setup
-      const ambientLight = new THREE.AmbientLight(0x111111, 0.2);
+      // Enhanced lighting for clear white skull visibility
+      const ambientLight = new THREE.AmbientLight(0x404040, 0.6);
       scene.add(ambientLight);
 
-      // Main dramatic light
-      const mainLight = new THREE.DirectionalLight(0x444444, 1.5);
-      mainLight.position.set(5, 10, 5);
+      // Main bright light for skull visibility
+      const mainLight = new THREE.DirectionalLight(0xffffff, 2.0);
+      mainLight.position.set(5, 10, 8);
       mainLight.castShadow = true;
       mainLight.shadow.mapSize.width = 4096;
       mainLight.shadow.mapSize.height = 4096;
       mainLight.shadow.camera.near = 0.1;
       mainLight.shadow.camera.far = 50;
-      mainLight.shadow.camera.left = -15;
-      mainLight.shadow.camera.right = 15;
-      mainLight.shadow.camera.top = 15;
-      mainLight.shadow.camera.bottom = -15;
+      mainLight.shadow.camera.left = -20;
+      mainLight.shadow.camera.right = 20;
+      mainLight.shadow.camera.top = 20;
+      mainLight.shadow.camera.bottom = -20;
       scene.add(mainLight);
 
-      // Colored accent lights for glow effects
-      const redLight = new THREE.PointLight(0xff2222, 2, 20);
-      redLight.position.set(-3, 2, 8);
+      // Additional fill lights for even illumination
+      const fillLight1 = new THREE.DirectionalLight(0xffffff, 1.0);
+      fillLight1.position.set(-5, 5, 5);
+      scene.add(fillLight1);
+
+      const fillLight2 = new THREE.DirectionalLight(0xffffff, 0.8);
+      fillLight2.position.set(0, -5, 8);
+      scene.add(fillLight2);
+
+      // Colored accent lights for glow effects (dimmer)
+      const redLight = new THREE.PointLight(0xff2222, 1.5, 25);
+      redLight.position.set(-4, 3, 10);
       scene.add(redLight);
 
-      const orangeLight = new THREE.PointLight(0xff6644, 1.5, 15);
-      orangeLight.position.set(3, -2, 6);
+      const orangeLight = new THREE.PointLight(0xff6644, 1.2, 20);
+      orangeLight.position.set(4, -3, 8);
       scene.add(orangeLight);
 
-      const blueLight = new THREE.PointLight(0x4488ff, 1, 12);
-      blueLight.position.set(0, 5, -5);
+      const blueLight = new THREE.PointLight(0x4488ff, 1.0, 18);
+      blueLight.position.set(0, 6, -8);
       scene.add(blueLight);
 
-      // Rim lighting for dramatic silhouette
-      const rimLight1 = new THREE.DirectionalLight(0x222222, 0.8);
-      rimLight1.position.set(-10, 0, -10);
-      scene.add(rimLight1);
-
-      const rimLight2 = new THREE.DirectionalLight(0x333333, 0.6);
-      rimLight2.position.set(10, -5, -8);
-      scene.add(rimLight2);
-
-      // Create realistic skull parts
+      // Create realistic white skull parts
       const skullParts: SkullPart[] = [];
 
       anatomicalParts.forEach((part, index) => {
@@ -359,91 +359,59 @@ const SkullScene: React.FC = () => {
         // Create more realistic skull geometries
         switch (part.name) {
           case 'Frontal Bone':
-            geometry = new THREE.SphereGeometry(1, 32, 32, 0, Math.PI, 0, Math.PI * 0.7);
+            geometry = new THREE.SphereGeometry(1.2, 32, 32, 0, Math.PI, 0, Math.PI * 0.7);
             break;
           case 'Parietal Bone (Left)':
           case 'Parietal Bone (Right)':
-            geometry = new THREE.SphereGeometry(0.9, 24, 24, 0, Math.PI * 0.6, 0, Math.PI * 0.8);
+            geometry = new THREE.SphereGeometry(1.1, 24, 24, 0, Math.PI * 0.6, 0, Math.PI * 0.8);
             break;
           case 'Temporal Bone (Left)':
           case 'Temporal Bone (Right)':
-            geometry = new THREE.CylinderGeometry(0.6, 0.8, 1.2, 16, 4);
+            geometry = new THREE.CylinderGeometry(0.8, 1.0, 1.5, 16, 4);
             break;
           case 'Occipital Bone':
-            geometry = new THREE.SphereGeometry(1, 32, 32, Math.PI * 0.3, Math.PI * 0.7, 0, Math.PI * 0.8);
+            geometry = new THREE.SphereGeometry(1.2, 32, 32, Math.PI * 0.3, Math.PI * 0.7, 0, Math.PI * 0.8);
             break;
           case 'Mandible':
-            geometry = new THREE.BoxGeometry(1, 1, 1, 8, 4, 6);
+            geometry = new THREE.BoxGeometry(1.2, 1.2, 1.2, 8, 4, 6);
             // Add curve to mandible
             const positions = geometry.attributes.position.array as Float32Array;
             for (let i = 0; i < positions.length; i += 3) {
               const x = positions[i];
               const y = positions[i + 1];
               if (y < 0) {
-                positions[i + 2] += Math.abs(x) * 0.3; // Curve the jaw
+                positions[i + 2] += Math.abs(x) * 0.4; // Curve the jaw
               }
             }
             geometry.attributes.position.needsUpdate = true;
             break;
           case 'Maxilla':
-            geometry = new THREE.BoxGeometry(1, 1, 1, 6, 3, 4);
+            geometry = new THREE.BoxGeometry(1.2, 1.2, 1.2, 6, 3, 4);
             break;
           case 'Eye Socket (Left)':
           case 'Eye Socket (Right)':
-            geometry = new THREE.SphereGeometry(0.4, 16, 16, 0, Math.PI * 2, 0, Math.PI * 0.6);
+            geometry = new THREE.SphereGeometry(0.5, 16, 16, 0, Math.PI * 2, 0, Math.PI * 0.6);
             break;
           case 'Nasal Cavity':
-            geometry = new THREE.ConeGeometry(0.3, 0.8, 8, 4);
+            geometry = new THREE.ConeGeometry(0.4, 1.0, 8, 4);
             break;
           default:
-            geometry = new THREE.BoxGeometry(1, 1, 1, 4, 4, 4);
+            geometry = new THREE.BoxGeometry(1.2, 1.2, 1.2, 4, 4, 4);
         }
 
-        // Realistic bone material with weathered look
+        // Clean white bone material for maximum visibility
         const material = new THREE.MeshPhysicalMaterial({
           color: part.color,
           transparent: false,
           opacity: 1,
-          roughness: 0.8,
-          metalness: 0.1,
-          clearcoat: 0.2,
-          clearcoatRoughness: 0.8,
+          roughness: 0.3,
+          metalness: 0.0,
+          clearcoat: 0.5,
+          clearcoatRoughness: 0.2,
           transmission: 0,
           thickness: 0,
-          envMapIntensity: 0.3,
+          envMapIntensity: 0.5,
         });
-
-        // Add subtle texture variation
-        const canvas = document.createElement('canvas');
-        canvas.width = 256;
-        canvas.height = 256;
-        const ctx = canvas.getContext('2d')!;
-        
-        // Create bone texture
-        ctx.fillStyle = '#666666';
-        ctx.fillRect(0, 0, 256, 256);
-        
-        // Add noise and cracks
-        for (let i = 0; i < 1000; i++) {
-          ctx.fillStyle = `rgba(${Math.random() * 100}, ${Math.random() * 100}, ${Math.random() * 100}, 0.3)`;
-          ctx.fillRect(Math.random() * 256, Math.random() * 256, 2, 2);
-        }
-        
-        // Add crack lines
-        ctx.strokeStyle = 'rgba(40, 40, 40, 0.8)';
-        ctx.lineWidth = 1;
-        for (let i = 0; i < 20; i++) {
-          ctx.beginPath();
-          ctx.moveTo(Math.random() * 256, Math.random() * 256);
-          ctx.lineTo(Math.random() * 256, Math.random() * 256);
-          ctx.stroke();
-        }
-
-        const texture = new THREE.CanvasTexture(canvas);
-        texture.wrapS = THREE.RepeatWrapping;
-        texture.wrapT = THREE.RepeatWrapping;
-        texture.repeat.set(2, 2);
-        material.map = texture;
 
         const mesh = new THREE.Mesh(geometry, material);
         mesh.position.set(...part.position as [number, number, number]);
@@ -452,22 +420,22 @@ const SkullScene: React.FC = () => {
         mesh.receiveShadow = true;
         mesh.userData = { name: part.name, section: part.section };
 
-        // Enhanced floating animation with more realistic movement
+        // Enhanced floating animation with more pronounced movement
         gsap.to(mesh.position, {
-          y: mesh.position.y + (Math.random() * 0.15 + 0.05),
-          duration: 3 + Math.random() * 2,
+          y: mesh.position.y + (Math.random() * 0.3 + 0.1),
+          duration: 4 + Math.random() * 2,
           repeat: -1,
           yoyo: true,
           ease: 'sine.inOut',
-          delay: Math.random() * 3,
+          delay: Math.random() * 2,
         });
 
-        // Subtle breathing-like rotation
+        // More visible breathing-like rotation
         gsap.to(mesh.rotation, {
-          x: mesh.rotation.x + (Math.random() * 0.1 - 0.05),
-          y: mesh.rotation.y + (Math.random() * 0.1 - 0.05),
-          z: mesh.rotation.z + (Math.random() * 0.05 - 0.025),
-          duration: 6 + Math.random() * 4,
+          x: mesh.rotation.x + (Math.random() * 0.2 - 0.1),
+          y: mesh.rotation.y + (Math.random() * 0.2 - 0.1),
+          z: mesh.rotation.z + (Math.random() * 0.1 - 0.05),
+          duration: 8 + Math.random() * 4,
           repeat: -1,
           yoyo: true,
           ease: 'sine.inOut',
@@ -490,77 +458,6 @@ const SkullScene: React.FC = () => {
 
       skullPartsRef.current = skullParts;
 
-      // Enhanced dark particle system
-      const particleGeometry = new THREE.BufferGeometry();
-      const particleCount = 200;
-      const positions = new Float32Array(particleCount * 3);
-      const colors = new Float32Array(particleCount * 3);
-      const sizes = new Float32Array(particleCount);
-
-      for (let i = 0; i < particleCount; i++) {
-        positions[i * 3] = (Math.random() - 0.5) * 30;
-        positions[i * 3 + 1] = (Math.random() - 0.5) * 30;
-        positions[i * 3 + 2] = (Math.random() - 0.5) * 30;
-
-        // Dark, ember-like colors
-        const colorChoice = Math.random();
-        const color = new THREE.Color();
-        if (colorChoice < 0.3) {
-          color.setHSL(0.05, 0.8, 0.3); // Orange ember
-        } else if (colorChoice < 0.6) {
-          color.setHSL(0, 0.9, 0.4); // Red ember
-        } else {
-          color.setHSL(0.15, 0.7, 0.2); // Dark orange
-        }
-        
-        colors[i * 3] = color.r;
-        colors[i * 3 + 1] = color.g;
-        colors[i * 3 + 2] = color.b;
-
-        sizes[i] = Math.random() * 3 + 1;
-      }
-
-      particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-      particleGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-      particleGeometry.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
-
-      const particleMaterial = new THREE.ShaderMaterial({
-        uniforms: {
-          time: { value: 0 },
-        },
-        vertexShader: `
-          attribute float size;
-          varying vec3 vColor;
-          uniform float time;
-          
-          void main() {
-            vColor = color;
-            vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
-            float pulseFactor = 1.0 + sin(time * 2.0 + position.x * 0.02) * 0.5;
-            gl_PointSize = size * (400.0 / -mvPosition.z) * pulseFactor;
-            gl_Position = projectionMatrix * mvPosition;
-          }
-        `,
-        fragmentShader: `
-          varying vec3 vColor;
-          
-          void main() {
-            float distance = length(gl_PointCoord - vec2(0.5));
-            if (distance > 0.5) discard;
-            
-            float alpha = 1.0 - distance * 2.0;
-            float glow = pow(alpha, 2.0);
-            gl_FragColor = vec4(vColor * (1.0 + glow), alpha * 0.8);
-          }
-        `,
-        transparent: true,
-        vertexColors: true,
-        blending: THREE.AdditiveBlending,
-      });
-
-      const particles = new THREE.Points(particleGeometry, particleMaterial);
-      scene.add(particles);
-
       // Add event listeners
       container.addEventListener('mousemove', handleMouseMove);
       container.addEventListener('click', handleClick);
@@ -574,31 +471,22 @@ const SkullScene: React.FC = () => {
         frameIdRef.current = requestAnimationFrame(animate);
         time += 0.01;
         
-        // Update particle shader time
-        if (particleMaterial.uniforms.time) {
-          particleMaterial.uniforms.time.value = time;
-        }
-
-        // Slow particle drift
-        particles.rotation.y += 0.001;
-        particles.rotation.x += 0.0005;
-        
-        // Subtle skull assembly rotation
+        // Subtle skull assembly rotation for better visibility
         if (scene && !isNavigating) {
-          scene.rotation.y += 0.002;
-          scene.rotation.x = Math.sin(time * 0.3) * 0.03;
+          scene.rotation.y += 0.003;
+          scene.rotation.x = Math.sin(time * 0.4) * 0.05;
         }
 
-        // Dynamic lighting effects
-        redLight.intensity = 2 + Math.sin(time * 3) * 0.5;
-        orangeLight.intensity = 1.5 + Math.cos(time * 2.5) * 0.3;
-        blueLight.intensity = 1 + Math.sin(time * 4) * 0.2;
+        // Dynamic lighting effects for dramatic shadows
+        redLight.intensity = 1.5 + Math.sin(time * 2) * 0.3;
+        orangeLight.intensity = 1.2 + Math.cos(time * 1.8) * 0.2;
+        blueLight.intensity = 1.0 + Math.sin(time * 2.5) * 0.2;
 
-        // Move lights for dramatic shadows
-        redLight.position.x = -3 + Math.sin(time * 0.8) * 2;
-        orangeLight.position.z = 6 + Math.cos(time * 0.6) * 3;
+        // Move lights for dynamic shadows
+        redLight.position.x = -4 + Math.sin(time * 0.6) * 2;
+        orangeLight.position.z = 8 + Math.cos(time * 0.4) * 2;
 
-        // Enhanced hover effect with glow
+        // Enhanced hover effect with strong glow
         if (raycasterRef.current && camera && mouseRef.current && !isNavigating) {
           raycasterRef.current.setFromCamera(mouseRef.current, camera);
           
@@ -612,7 +500,7 @@ const SkullScene: React.FC = () => {
             material.emissive.setHex(0x000000);
           });
 
-          // Dramatic highlight for hovered part
+          // Strong highlight for hovered part
           if (intersects.length > 0) {
             const hoveredMesh = intersects[0].object as THREE.Mesh;
             const material = hoveredMesh.material as THREE.MeshPhysicalMaterial;
@@ -620,7 +508,7 @@ const SkullScene: React.FC = () => {
             
             if (skullPart) {
               material.emissive.setHex(skullPart.glowColor);
-              material.emissiveIntensity = 0.3 + Math.sin(time * 8) * 0.1;
+              material.emissiveIntensity = 0.8 + Math.sin(time * 10) * 0.2;
               container.style.cursor = 'pointer';
               setSelectedPart(`${skullPart.name} → ${skullPart.section.toUpperCase()}`);
             }
@@ -669,13 +557,10 @@ const SkullScene: React.FC = () => {
           if (part.mesh.geometry) part.mesh.geometry.dispose();
           if (part.mesh.material) {
             const material = part.mesh.material as THREE.Material;
-            if (material.map) material.map.dispose();
             material.dispose();
           }
         });
         
-        if (particleGeometry) particleGeometry.dispose();
-        if (particleMaterial) particleMaterial.dispose();
         if (renderer) renderer.dispose();
         
         // Clear refs
@@ -717,7 +602,7 @@ const SkullScene: React.FC = () => {
     <div className="relative w-full h-full bg-black">
       <div ref={mountRef} className="w-full h-full" />
       
-      {/* Enhanced navigation tooltip with skull theme */}
+      {/* Enhanced navigation tooltip */}
       {selectedPart && (
         <div className="absolute top-4 left-4 bg-gradient-to-r from-black/95 to-red-900/95 backdrop-blur-md border border-red-500/50 rounded-xl p-4 text-white shadow-2xl shadow-red-500/20 transform transition-all duration-300">
           <div className="flex items-center space-x-3">
@@ -730,7 +615,7 @@ const SkullScene: React.FC = () => {
         </div>
       )}
 
-      {/* Enhanced navigation guide with skull theme */}
+      {/* Enhanced navigation guide */}
       <div className="absolute bottom-4 right-4 bg-gradient-to-r from-black/95 to-gray-900/95 backdrop-blur-md border border-gray-600 rounded-xl p-4 text-white shadow-xl">
         <div className="space-y-2">
           <div className="flex items-center space-x-2">
@@ -756,7 +641,7 @@ const SkullScene: React.FC = () => {
         </div>
       </div>
 
-      {/* Loading overlay for navigation with skull theme */}
+      {/* Loading overlay for navigation */}
       {isNavigating && (
         <div className="absolute inset-0 bg-black/90 backdrop-blur-sm flex items-center justify-center z-10">
           <div className="text-center">

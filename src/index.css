@@ -53,23 +53,6 @@ body {
   user-select: none;
 }
 
-/* Enhanced dark gradient backgrounds */
-.gradient-radial {
-  background: radial-gradient(ellipse at center, 
-    rgba(220, 38, 38, 0.15) 0%, 
-    rgba(234, 88, 12, 0.1) 30%,
-    rgba(245, 158, 11, 0.05) 60%,
-    transparent 80%);
-}
-
-.gradient-conic {
-  background: conic-gradient(from 180deg at 50% 50%, 
-    rgba(220, 38, 38, 0.1) 0deg, 
-    rgba(234, 88, 12, 0.08) 120deg,
-    rgba(245, 158, 11, 0.06) 240deg,
-    rgba(220, 38, 38, 0.1) 360deg);
-}
-
 /* Enhanced dark animations */
 @keyframes float {
   0%, 100% { 
@@ -104,14 +87,14 @@ body {
   }
 }
 
-@keyframes ember-pulse {
+@keyframes skull-pulse {
   0%, 100% {
-    opacity: 0.6;
+    opacity: 0.8;
     transform: scale(1);
   }
   50% {
     opacity: 1;
-    transform: scale(1.1);
+    transform: scale(1.02);
   }
 }
 
@@ -144,7 +127,7 @@ body {
 
 @keyframes flicker {
   0%, 100% { opacity: 1; }
-  50% { opacity: 0.8; }
+  50% { opacity: 0.9; }
 }
 
 /* Enhanced dark utility classes */
@@ -156,8 +139,8 @@ body {
   animation: dark-glow 3s ease-in-out infinite alternate;
 }
 
-.animate-ember-pulse {
-  animation: ember-pulse 4s ease-in-out infinite;
+.animate-skull-pulse {
+  animation: skull-pulse 4s ease-in-out infinite;
 }
 
 .animate-dark-shimmer {
@@ -263,27 +246,6 @@ body {
   z-index: -1;
 }
 
-/* Dark particle effects */
-.ember-particle {
-  position: absolute;
-  pointer-events: none;
-  border-radius: 50%;
-  animation: float 8s ease-in-out infinite;
-  box-shadow: 0 0 10px currentColor;
-}
-
-.ember-particle:nth-child(odd) {
-  animation-direction: reverse;
-}
-
-.ember-particle:nth-child(3n) {
-  animation-duration: 12s;
-}
-
-.ember-particle:nth-child(4n) {
-  animation-duration: 6s;
-}
-
 /* Dark loading animations */
 .loading-skull {
   display: inline-flex;
@@ -348,9 +310,9 @@ body {
 /* Dark theme specific enhancements */
 .dark-mesh-bg {
   background-image: 
-    radial-gradient(circle at 25% 25%, rgba(220, 38, 38, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, rgba(234, 88, 12, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.06) 0%, transparent 50%);
+    radial-gradient(circle at 25% 25%, rgba(220, 38, 38, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(234, 88, 12, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.02) 0%, transparent 50%);
   animation: dark-shimmer 8s ease-in-out infinite;
 }
 
