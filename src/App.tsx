@@ -7,6 +7,7 @@ import Skills from './components/Skills';
 import Resume from './components/Resume';
 import Contact from './components/Contact';
 import LoadingScreen from './components/LoadingScreen';
+import ErrorBoundary from './components/ErrorBoundary';
 
 function App() {
   useEffect(() => {
@@ -37,17 +38,19 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-space-950 text-white font-inter">
-      <LoadingScreen />
-      <Navigation />
-      <main>
-        <Hero />
-        <Projects />
-        <Skills />
-        <Resume />
-        <Contact />
-      </main>
-    </div>
+    <ErrorBoundary>
+      <div className="bg-space-950 text-white font-inter">
+        <LoadingScreen />
+        <Navigation />
+        <main>
+          <Hero />
+          <Projects />
+          <Skills />
+          <Resume />
+          <Contact />
+        </main>
+      </div>
+    </ErrorBoundary>
   );
 }
 

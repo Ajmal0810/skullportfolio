@@ -1,7 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SkullScene from './SkullScene';
+import ErrorBoundary from './ErrorBoundary';
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 
 const Hero: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -58,7 +63,11 @@ const Hero: React.FC = () => {
     }
 
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
   }, []);
 
   const scrollToProjects = () => {
@@ -163,9 +172,11 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Enhanced 3D Skull Scene */}
+          {/* Enhanced 3D Skull Scene with Error Boundary */}
           <div className="relative h-96 lg:h-[600px] rounded-2xl overflow-hidden bg-gradient-to-br from-space-800/50 to-space-900/50 backdrop-blur-sm border border-space-700 shadow-2xl shadow-blue-500/10">
-            <SkullScene />
+            <ErrorBoundary>
+              <SkullScene />
+            </ErrorBoundary>
             
             {/* Glowing border effect */}
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
